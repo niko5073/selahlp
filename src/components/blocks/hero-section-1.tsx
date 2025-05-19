@@ -76,11 +76,10 @@ const HeroContent = () => {
           key={1}
           asChild
           size="lg"
-          className="rounded-2xl px-12 py-3 text-lg h-12 min-w-[12rem] bg-white text-black hover:bg-white/90">
-          <Link href="#link">
+          className="rounded-2xl px-12 py-3 text-lg h-12 min-w-[12rem] bg-white text-black hover:bg-white/90 transition-all duration-300 hover:scale-105 hover:shadow-lg">
+          <Link href="https://airtable.com/appNnsiMGkYzC5TDK/shrKD2XxY9xuOOrdT">
             <span className="flex items-center gap-2 text-nowrap">
-              <Apple className="w-5 h-5" />
-              Download for Mac
+              Join waitlist
             </span>
           </Link>
         </Button>
@@ -89,10 +88,10 @@ const HeroContent = () => {
           asChild
           size="lg"
           variant="ghost"
-          className="h-12 rounded-2xl px-12 py-3 text-lg min-w-[12rem] border border-white/30 text-white hover:bg-white/10 transition-colors"
+          className="h-12 rounded-2xl px-12 py-3 text-lg min-w-[12rem] border border-white/30 text-white hover:bg-white/10 hover:border-white/50 transition-all duration-300 hover:scale-105"
         >
           <Link href="#link">
-            <span className="text-nowrap">All Downloads</span>
+            <span className="text-nowrap">See demo</span>
           </Link>
         </Button>
       </AnimatedGroup>
@@ -161,7 +160,7 @@ export function HeroSection() {
                 <Link
                   href="/"
                   className="block text-sm text-white duration-150 hover:opacity-75">
-                  <span> Meet Our Customers</span>
+                  <span> Built for engineers at</span>
                   <ChevronRight className="ml-1 inline-block size-3" />
                 </Link>
               </div>
@@ -241,6 +240,7 @@ export function HeroSection() {
                   />
                 </div>
               </div>
+              <p className="text-center text-sm text-white/50 mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">Logos shown for illustrative purposes; no affiliation implied</p>
             </div>
           </section>
         </div>
@@ -250,7 +250,7 @@ export function HeroSection() {
 }
 
 const menuItems = [
-  { name: 'Features', href: '/features' },
+  { name: 'Features', href: '#' },
   { name: 'Manifesto', href: '#manifesto' },
   { name: 'Resources', href: '#resources' },
 ]
@@ -319,26 +319,26 @@ const HeroHeader = () => {
                 </ul>
               </div>
               <div className="flex w-full flex-col space-y-3 sm:flex-row sm:gap-3 sm:space-y-0 md:w-fit">
-                <Button
+                {/* <Button
                   asChild
                   variant="outline"
-                  className={cn(isScrolled && 'lg:hidden', 'border-white/10 text-white hover:bg-white/10 px-4 h-9 text-sm rounded-2xl min-w-[7rem]')}>
+                  className={cn(isScrolled && 'lg:hidden', 'border-white/10 text-white hover:bg-white/10 hover:border-white/30 px-4 h-9 text-sm rounded-2xl min-w-[7rem] transition-all duration-300 hover:scale-105')}>
                   <Link href="#">
-                    <span>Login</span>
+                    <span>See demo</span>
+                  </Link>
+                </Button> */}
+                <Button
+                  asChild
+                  className={cn(isScrolled && 'lg:hidden', 'bg-white text-black hover:bg-white/90 px-4 h-9 text-sm rounded-2xl min-w-[7rem] transition-all duration-300 hover:scale-105 hover:shadow-lg')}>
+                  <Link href="https://airtable.com/appNnsiMGkYzC5TDK/shrKD2XxY9xuOOrdT">
+                    <span>Join waitlist</span>
                   </Link>
                 </Button>
                 <Button
                   asChild
-                  className={cn(isScrolled && 'lg:hidden', 'bg-white text-black hover:bg-white/90 px-4 h-9 text-sm rounded-2xl min-w-[7rem]')}>
-                  <Link href="#">
-                    <span>Sign Up</span>
-                  </Link>
-                </Button>
-                <Button
-                  asChild
-                  className={cn(isScrolled ? 'lg:inline-flex' : 'hidden', 'bg-white text-black hover:bg-white/90 px-4 h-9 text-sm rounded-2xl min-w-[7rem]')}>
-                  <Link href="#cta">
-                    <span>Try it free</span>
+                  className={cn(isScrolled ? 'lg:inline-flex' : 'hidden', 'bg-white text-black hover:bg-white/90 px-4 h-9 text-sm rounded-2xl min-w-[7rem] transition-all duration-300 hover:scale-105 hover:shadow-lg')}>
+                  <Link href="https://airtable.com/appNnsiMGkYzC5TDK/shrKD2XxY9xuOOrdT">
+                    <span>Join waitlist</span>
                   </Link>
                 </Button>
               </div>

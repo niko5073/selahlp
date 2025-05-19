@@ -36,7 +36,7 @@ export function CTASection({ title, action, className }: CTAProps) {
         <Button 
           variant={action.variant || "default"} 
           size="lg" 
-          className="animate-appear delay-100 px-12 py-4 text-xl h-14 min-w-[14rem]"
+          className="animate-appear delay-100 px-12 py-4 text-xl h-14 min-w-[14rem] transition-all duration-300 hover:scale-105 hover:shadow-lg"
           asChild
         >
           <a href={action.href}>{action.text}</a>

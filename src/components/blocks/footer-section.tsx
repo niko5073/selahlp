@@ -20,7 +20,6 @@ const footerLinks: FooterSection[] = [
 	{
 		label: 'Product',
 		links: [
-			{ title: 'Features', href: '#features' },
 			{ title: 'Case Studies', href: '#testimonials' },
 			{ title: 'Integration', href: '/' },
 		],
