@@ -72,13 +72,24 @@ const Guide = () => {
           <div className="border-border/50 relative rounded-xl border p-6 lg:col-span-3 bg-[#18181b]/50 backdrop-blur-sm border-white/5 hover:border-white/10 transition-colors flex items-center h-full overflow-visible">
             <div className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[140%] h-[120%] blur-[90px] opacity-50 bg-[radial-gradient(ellipse_at_center,_rgba(236,72,153,0.35)_0%,_rgba(168,85,247,0.18)_50%,_rgba(236,72,153,0)_100%)] z-0" />
             <div className="relative rounded-2xl h-[420px] w-full flex items-center z-10">
-              <img
-                src="https://carbon.now.sh/img/1g3QwKQwQwQwQwQwQwQw.png"
-                className="rounded-[15px] shadow h-full w-full object-cover"
-                alt="vertical code editor mockup"
-                width={600}
-                height={800}
-              />
+              <div className="w-full h-full bg-[#18181b] rounded-xl shadow-lg p-6 flex flex-col justify-start">
+                <div className="flex gap-2 mb-4">
+                  <span className="w-3 h-3 rounded-full bg-red-500 inline-block" />
+                  <span className="w-3 h-3 rounded-full bg-yellow-400 inline-block" />
+                  <span className="w-3 h-3 rounded-full bg-green-500 inline-block" />
+                </div>
+                <pre className="text-white text-sm font-mono bg-transparent p-0 m-0 overflow-x-auto">
+{`# selah.yaml
+cloud: aws
+region: us-east-1
+services:
+  - type: s3
+    name: my-bucket
+  - type: ec2
+    instance_type: t3.micro
+    count: 2`}
+                </pre>
+              </div>
             </div>
           </div>
         </div>

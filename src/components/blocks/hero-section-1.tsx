@@ -116,7 +116,7 @@ const HeroImage = () => {
       }}>
       <div className="relative -mr-56 mt-8 overflow-visible px-2 sm:mr-0 sm:mt-12 md:mt-20">
         <div className="pointer-events-none select-none absolute left-1/2 -translate-x-1/2 bottom-[-16rem] z-0 w-[160%] h-[44rem]" style={{filter: 'blur(90px)', opacity: 0.8}}>
-          <div className="w-full h-full bg-gradient-to-b from-pink-500 via-purple-500 to-transparent" />
+          <div className="w-full h-full bg-gradient-to-b from-pink-500 via-purple-500 to-[#0a0a0a]" />
           <div className="absolute inset-0 w-full h-full opacity-40 pointer-events-none select-none bg-[url('https://www.transparenttextures.com/patterns/noise.png')] bg-repeat" />
         </div>
         <div className="inset-shadow-2xs ring-white/10 bg-white/10 backdrop-blur-md relative mx-auto max-w-6xl overflow-hidden rounded-2xl border border-white/10 p-4 shadow-lg shadow-black/15 ring-1 z-10">
@@ -250,7 +250,7 @@ export function HeroSection() {
 }
 
 const menuItems = [
-  { name: 'Documentation', href: '#documentation' },
+  { name: 'Features', href: '/features' },
   { name: 'Manifesto', href: '#manifesto' },
   { name: 'Resources', href: '#resources' },
 ]
@@ -352,11 +352,10 @@ const HeroHeader = () => {
 
 const Logo = ({ className }: { className?: string }) => {
   return (
-    <img
-      src="/selah_symbol_white.png"
-      alt="Selah Logo"
-      className={cn('h-16 w-auto', className)}
-    />
+    <span className={cn('text-2xl font-bold tracking-tight flex items-center gap-0 whitespace-nowrap', className)}>
+      <img src="/logo.png" alt="Selah Logo" width={48} height={48} className="inline-block object-contain m-0 p-0" />
+      Selah
+    </span>
   )
 } 
 

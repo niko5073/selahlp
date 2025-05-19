@@ -2,7 +2,8 @@
 import React from 'react';
 import type { ComponentProps, ReactNode } from 'react';
 import { motion, useReducedMotion } from 'motion/react';
-import { FacebookIcon, FrameIcon, InstagramIcon, LinkedinIcon, YoutubeIcon, TwitterIcon } from 'lucide-react';
+import { FacebookIcon, FrameIcon, LinkedinIcon, YoutubeIcon, TwitterIcon } from 'lucide-react';
+import { FaReddit } from 'react-icons/fa';
 
 interface FooterLink {
 	title: string;
@@ -20,7 +21,7 @@ const footerLinks: FooterSection[] = [
 		label: 'Product',
 		links: [
 			{ title: 'Features', href: '#features' },
-			{ title: 'Testimonials', href: '#testimonials' },
+			{ title: 'Case Studies', href: '#testimonials' },
 			{ title: 'Integration', href: '/' },
 		],
 	},
@@ -44,7 +45,7 @@ const footerLinks: FooterSection[] = [
 		label: 'Social Links',
 		links: [
 			{ title: 'X', href: 'https://x.com/getselahai', icon: TwitterIcon },
-			{ title: 'Instagram', href: '#', icon: InstagramIcon },
+			{ title: 'Reddit', href: '#', icon: FaReddit },
 			{ title: 'LinkedIn', href: 'https://www.linkedin.com/company/selahai', icon: LinkedinIcon },
 		],
 	},
@@ -57,9 +58,9 @@ export function Footer() {
 
 			<div className="grid w-full gap-8 xl:grid-cols-3 xl:gap-8">
 				<AnimatedContainer className="space-y-4">
-					<FrameIcon className="size-8" />
+					<img src="/logo.png" alt="Selah Logo" width={64} height={64} className="inline-block object-contain mx-auto" />
 					<p className="text-muted-foreground mt-8 text-sm md:mt-0">
-						© {new Date().getFullYear()} Asme. All rights reserved.
+						© {new Date().getFullYear()} Selah. All rights reserved.
 					</p>
 				</AnimatedContainer>
 

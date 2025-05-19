@@ -21,10 +21,10 @@ export function CTASection({ title, action, className }: CTAProps) {
       <svg className="absolute left-1/2 top-[45%] -translate-x-1/2 -translate-y-1/2 z-0 w-[900px] h-[520px] blur-2xl opacity-50" viewBox="0 0 900 520" fill="none" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <radialGradient id="cta-blob-gradient" cx="50%" cy="50%" r="60%" fx="50%" fy="40%" gradientTransform="rotate(25)">
-            <stop offset="0%" stop-color="#ec4899" stop-opacity="0.4" />
-            <stop offset="55%" stop-color="#a855f7" stop-opacity="0.18" />
-            <stop offset="85%" stop-color="#a855f7" stop-opacity="0.08" />
-            <stop offset="100%" stop-color="#ec4899" stop-opacity="0" />
+            <stop offset="0%" stopColor="#ec4899" stopOpacity="0.4" />
+            <stop offset="55%" stopColor="#a855f7" stopOpacity="0.18" />
+            <stop offset="85%" stopColor="#a855f7" stopOpacity="0.08" />
+            <stop offset="100%" stopColor="#ec4899" stopOpacity="0" />
           </radialGradient>
         </defs>
         <ellipse cx="450" cy="260" rx="410" ry="210" fill="url(#cta-blob-gradient)" />

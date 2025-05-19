@@ -1,8 +1,8 @@
 import './globals.css'
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Figtree } from 'next/font/google'
 
-const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
+const figtree = Figtree({ subsets: ['latin'], variable: '--font-figtree' })
 
 export const metadata: Metadata = {
   title: 'Selah - Your Cloud Management Agent',
@@ -16,7 +16,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="dark">
-      <body className={`${inter.className} bg-background`}>{children}</body>
+      <body className={`${figtree.className} bg-background tracking-wide`}>{children}</body>
     </html>
   )
 } 

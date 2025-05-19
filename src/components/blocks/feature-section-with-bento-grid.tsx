@@ -74,8 +74,36 @@ export function FeaturesSectionWithBentoGrid() {
       code: `resource "aws_s3_bucket" "app_bucket" {
   bucket = "my-app-bucket"
   acl    = "private"
-  versioning { enabled = true }
-}`,
+  versioning {
+    enabled = true
+  }
+  tags = {
+    Environment = "production"
+    Team        = "devops"
+  }
+}
+
+resource "aws_iam_role" "app_role" {
+  name = "app-role"
+  assume_role_policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [{
+      Action = "sts:AssumeRole"
+      Effect = "Allow"
+      Principal = { Service = "ec2.amazonaws.com" }
+    }]
+  })
+}
+
+resource "aws_instance" "web" {
+  ami           = "ami-0c55b159cbfafe1f0"
+  instance_type = "t3.micro"
+  count         = 2
+  tags = {
+    Name = "web-server"
+  }
+}
+`,
       language: "terraform"
     },
     {
@@ -98,7 +126,7 @@ spec:
     {
       title: "Headspace to ship",
       description:
-        "Less time wiring things up. More time writing real code.",
+        "Less time wiring things up. More time deploying.",
       code: `resource "aws_iam_role" "app_role" {
   name = "app-role"
   assume_role_policy = jsonencode({
@@ -131,8 +159,17 @@ spec:
               <h3 className="text-white text-lg font-semibold mb-2">{features[0].title}</h3>
               <p className="text-neutral-400 text-sm">{features[0].description}</p>
             </div>
-            <div className="grid grid-rows-[1fr]">
-              <CursorIDEWindow code={features[0].code} />
+            <div className="grid grid-rows-[1fr] h-full">
+              <div className="w-full h-full bg-[#18181b] rounded-xl shadow-lg p-4 flex flex-col justify-start flex-1">
+                <div className="flex gap-2 mb-4">
+                  <span className="w-3 h-3 rounded-full bg-red-500 inline-block" />
+                  <span className="w-3 h-3 rounded-full bg-yellow-400 inline-block" />
+                  <span className="w-3 h-3 rounded-full bg-green-500 inline-block" />
+                </div>
+                <pre className="text-green-200 text-xs font-mono bg-transparent p-0 m-0 overflow-x-auto whitespace-pre-wrap flex-1">
+                  {features[0].code}
+                </pre>
+              </div>
             </div>
           </motion.div>
 

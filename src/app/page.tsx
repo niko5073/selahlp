@@ -7,7 +7,7 @@ import Footer from '@/components/sections/Footer'
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-gradient-to-b from-black via-purple-900/80 via-70% to-[#0a0a0a] to-90%">
+    <main className="min-h-screen bg-[#0a0a0a]">
       <HeroSection />
       <ProblemSection />
       <SolutionSection />
